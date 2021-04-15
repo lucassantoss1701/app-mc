@@ -1,5 +1,7 @@
 package com.lucas.springionic.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,7 @@ public class Categoria {
     private String nome;
 
     @ManyToMany(mappedBy = "categorias")
+    @JsonManagedReference
     private List<Produto> produtos = new ArrayList<>();
 
     public Categoria(){
