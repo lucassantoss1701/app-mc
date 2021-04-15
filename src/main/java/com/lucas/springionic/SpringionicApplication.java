@@ -1,8 +1,12 @@
 package com.lucas.springionic;
 
 import com.lucas.springionic.domain.Categoria;
+import com.lucas.springionic.domain.Cidade;
+import com.lucas.springionic.domain.Estado;
 import com.lucas.springionic.domain.Produto;
 import com.lucas.springionic.repositories.CategoriaRepository;
+import com.lucas.springionic.repositories.CidadeRepository;
+import com.lucas.springionic.repositories.EstadoRepository;
 import com.lucas.springionic.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -15,9 +19,16 @@ import java.util.Arrays;
 public class SpringionicApplication implements CommandLineRunner {
 
 	@Autowired
-	private CategoriaRepository repository;
+	private CategoriaRepository categoriaRepository;
+
 	@Autowired
 	private ProdutoRepository produtoRepository;
+
+	@Autowired
+	private EstadoRepository estadoRepository;
+
+	@Autowired
+	CidadeRepository cidadeRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringionicApplication.class, args);
@@ -32,7 +43,19 @@ public class SpringionicApplication implements CommandLineRunner {
 		Produto p2 = new Produto(null, "Impressora", 800.00);
 		Produto p3 = new Produto(null, "Mouse", 80.00);
 
+		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
+		produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
 
+
+		Estado est1 = new Estado(null, "Minas Gerais");
+		Estado est2 = new Estado(null, "São Paulo");
+
+		Cidade c1 = new Cidade(null, "Uberlândia", est1);
+		Cidade c2 = new Cidade(null, "São Paulo", est2);
+		Cidade c3 = new Cidade(null, "Campinas", est2);
+
+		est1.getCidades().addAll(Arrays.asList(c1));
+		est2.getCidades().addAll(Arrays.asList(c2,c3));
 
 		cat1.getProdutos().addAll(Arrays.asList(p1,p2,p3));
 		cat2.getProdutos().addAll(Arrays.asList(p2));
@@ -41,8 +64,8 @@ public class SpringionicApplication implements CommandLineRunner {
 		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
 		p3.getCategorias().addAll(Arrays.asList(cat1));
 
-		repository.saveAll(Arrays.asList(cat1, cat2));
-		produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
+		estadoRepository.saveAll(Arrays.asList(est1, est2));
+		cidadeRepository.saveAll(Arrays.asList(c1,c2,c3));
 
 	}
 }
