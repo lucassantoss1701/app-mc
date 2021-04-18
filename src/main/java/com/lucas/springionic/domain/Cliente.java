@@ -2,19 +2,25 @@ package com.lucas.springionic.domain;
 
 import com.lucas.springionic.domain.enums.TipoCliente;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.*;
 
 @Entity
 public class Cliente {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     private String email;
     private String cpfOuCnpj;
     private Integer tipo;
 
+    @OneToMany(mappedBy = "cliente")
     private List<Endereco> enderecos = new ArrayList<>();
 
+    @ElementCollection
+    @CollectionTable(name="TELEFONE")
     private Set<String> telefones = new HashSet<>();
 
     public Cliente(){

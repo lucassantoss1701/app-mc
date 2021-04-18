@@ -1,13 +1,8 @@
 package com.lucas.springionic;
 
-import com.lucas.springionic.domain.Categoria;
-import com.lucas.springionic.domain.Cidade;
-import com.lucas.springionic.domain.Estado;
-import com.lucas.springionic.domain.Produto;
-import com.lucas.springionic.repositories.CategoriaRepository;
-import com.lucas.springionic.repositories.CidadeRepository;
-import com.lucas.springionic.repositories.EstadoRepository;
-import com.lucas.springionic.repositories.ProdutoRepository;
+import com.lucas.springionic.domain.*;
+import com.lucas.springionic.domain.enums.TipoCliente;
+import com.lucas.springionic.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -28,7 +23,13 @@ public class SpringionicApplication implements CommandLineRunner {
 	private EstadoRepository estadoRepository;
 
 	@Autowired
-	CidadeRepository cidadeRepository;
+	private CidadeRepository cidadeRepository;
+
+	@Autowired
+	private ClienteRepository clienteRepository;
+
+	@Autowired
+	private EnderecoRepository enderecoRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringionicApplication.class, args);
@@ -42,6 +43,10 @@ public class SpringionicApplication implements CommandLineRunner {
 		Produto p1 = new Produto(null, "Computador", 2000.00);
 		Produto p2 = new Produto(null, "Impressora", 800.00);
 		Produto p3 = new Produto(null, "Mouse", 80.00);
+
+		p1.getCategorias().addAll(Arrays.asList(cat1));
+		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
+		p3.getCategorias().addAll(Arrays.asList(cat1));
 
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
 		produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
@@ -60,12 +65,20 @@ public class SpringionicApplication implements CommandLineRunner {
 		cat1.getProdutos().addAll(Arrays.asList(p1,p2,p3));
 		cat2.getProdutos().addAll(Arrays.asList(p2));
 
-		p1.getCategorias().addAll(Arrays.asList(cat1));
-		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
-		p3.getCategorias().addAll(Arrays.asList(cat1));
-
 		estadoRepository.saveAll(Arrays.asList(est1, est2));
 		cidadeRepository.saveAll(Arrays.asList(c1,c2,c3));
+
+		Cliente cli1 = new Cliente(null, "Maria Silva", "maria@gmail.com", "50096910860", TipoCliente.PESSOAFISICA);
+
+		cli1.getTelefones().addAll(Arrays.asList("38273397","98574412"));
+
+		Endereco e1 = new Endereco(null, "Rua flores", "300", "Apto 303", "Jardim","38220834",cli1, c1);
+		Endereco e2 = new Endereco(null, "Rua Espinhos", "485", "Apto 003", "Centro","3881834",cli1, c2);
+
+		cli1.getEnderecos().addAll(Arrays.asList(e1,e2));
+
+		clienteRepository.saveAll(Arrays.asList(cli1));
+		enderecoRepository.saveAll(Arrays.asList(e1, e2));
 
 	}
 }
