@@ -1,5 +1,6 @@
 package com.lucas.springionic.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.lucas.springionic.domain.enums.TipoCliente;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ public class Cliente {
     private String cpfOuCnpj;
     private Integer tipo;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "cliente")
     private List<Endereco> enderecos = new ArrayList<>();
 
