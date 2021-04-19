@@ -1,5 +1,6 @@
 package com.lucas.springionic.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.lucas.springionic.domain.enums.TipoCliente;
 
@@ -25,6 +26,7 @@ public class Cliente {
     @CollectionTable(name="TELEFONE")
     private Set<String> telefones = new HashSet<>();
 
+    @JsonIgnore
     @OneToMany(mappedBy = "cliente")
     private List<Pedido> pedidos = new ArrayList<>();
 

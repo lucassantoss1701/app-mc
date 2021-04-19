@@ -1,5 +1,7 @@
 package com.lucas.springionic.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import java.util.Objects;
@@ -9,6 +11,7 @@ import java.util.Objects;
 public class ItemPedido {
 
     @EmbeddedId
+    @JsonIgnore
     private  ItemPedidoPk id = new ItemPedidoPk();
 
     private Double desconto;
@@ -27,6 +30,8 @@ public class ItemPedido {
         this.preco = preco;
     }
 
+
+    @JsonIgnore
     public Pedido getPedido(){
         return id.getPedido();
     }

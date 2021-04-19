@@ -1,6 +1,7 @@
 package com.lucas.springionic.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.lucas.springionic.domain.enums.EstadoPagamento;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ public abstract class Pagamento {
     @OneToOne
     @JoinColumn(name = "pedido_id")
     @MapsId
+    @JsonIgnore
     private Pedido pedido;
 
     public Pagamento(){

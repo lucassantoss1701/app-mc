@@ -1,5 +1,6 @@
 package com.lucas.springionic.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.lucas.springionic.domain.enums.EstadoPagamento;
 
 import javax.persistence.Entity;
@@ -8,7 +9,9 @@ import java.util.Date;
 @Entity
 public class PagamentoComBoleto extends Pagamento{
 
+    @JsonFormat(pattern = "dd/MM/yy")
     private Date dataVencimento;
+    @JsonFormat(pattern = "dd/MM/yy")
     private Date dataPagamento;
 
     public PagamentoComBoleto(){

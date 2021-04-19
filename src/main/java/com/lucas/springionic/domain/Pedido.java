@@ -1,5 +1,7 @@
 package com.lucas.springionic.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
@@ -11,6 +13,8 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private Date instant;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "pedido")
