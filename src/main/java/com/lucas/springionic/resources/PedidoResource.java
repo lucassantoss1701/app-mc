@@ -1,4 +1,5 @@
 package com.lucas.springionic.resources;
+import com.lucas.springionic.domain.Cliente;
 import com.lucas.springionic.domain.Pedido;
 import com.lucas.springionic.services.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,8 @@ public class PedidoResource {
     private PedidoService service;
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<?> listar(@PathVariable Integer id){
-        Pedido obj = service.buscar(id);
+    public ResponseEntity<Pedido> listar(@PathVariable Integer id){
+        Pedido obj = service.find(id);
         return ResponseEntity.ok().body(obj);
     }
 }
