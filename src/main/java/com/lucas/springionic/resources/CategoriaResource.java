@@ -1,5 +1,6 @@
 package com.lucas.springionic.resources;
 import com.lucas.springionic.domain.Categoria;
+import com.lucas.springionic.dto.CategoriaDTO;
 import com.lucas.springionic.services.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -8,6 +9,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/categorias")
@@ -17,7 +20,7 @@ public class CategoriaResource {
     private CategoriaService service;
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Categoria> listar(@PathVariable Integer id){
+    public ResponseEntity<Categoria> find(@PathVariable Integer id){
         Categoria obj = service.find(id);
         return ResponseEntity.ok().body(obj);
     }
@@ -43,5 +46,12 @@ public class CategoriaResource {
     public ResponseEntity<Categoria> delete(@PathVariable Integer id){
         service.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<CategoriaDTO>> findAll(){
+        List<Categoria> list = service.findAll();
+        List<CategoriaDTO> listDTO = list.stream().map(obj ->new CategoriaDTO(obj)).collect(Collectors.toList());
+        return ResponseEntity.ok().body(listDTO);
     }
 }
