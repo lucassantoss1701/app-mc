@@ -2,11 +2,13 @@ package com.lucas.springionic.dto;
 
 
 import com.lucas.springionic.domain.Cliente;
+import com.lucas.springionic.services.validation.ClienteUpdate;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
+@ClienteUpdate
 public class ClienteDTO {
 
     private Integer id;
