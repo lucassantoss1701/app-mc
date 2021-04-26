@@ -5,74 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6bc189a-bb65-4943-a7e2-f8c27c6f6ddb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/create.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/SpringionicApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/config/DevConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/config/JacksonConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/config/ProdConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/config/TestConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/domain/Categoria.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/domain/Cidade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/domain/Cliente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/domain/Endereco.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/domain/Estado.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/domain/ItemPedido.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/domain/ItemPedidoPk.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/domain/Pagamento.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/domain/PagamentoComBoleto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/domain/PagamentoComCartao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/domain/Pedido.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/domain/Produto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/domain/enums/EstadoPagamento.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/domain/enums/TipoCliente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/dto/CategoriaDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/dto/ClienteDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/dto/ClienteNewDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/dto/ProdutoDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/repositories/CategoriaRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/repositories/CidadeRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/repositories/ClienteRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/repositories/EnderecoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/repositories/EstadoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/repositories/ItemPedidoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/repositories/PagamentoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/repositories/PedidoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/repositories/ProdutoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/resources/BoletoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/resources/CategoriaResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/resources/ClienteResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/resources/PedidoResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/resources/ProdutoResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/resources/exceptions/FieldMessage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/resources/exceptions/ResourceExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/resources/exceptions/StandardError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/resources/exceptions/ValidationError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/resources/utils/URL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/services/CategoriaService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/services/ClienteService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/services/DBService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/services/PedidoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/services/ProdutoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/services/exceptions/DataIntegrityException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/services/exceptions/ObjectNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/services/validation/ClienteInsert.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/services/validation/ClienteInsertValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/services/validation/ClienteUpdate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/services/validation/ClienteUpdateValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lucas/springionic/services/validation/utils/BR.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-test.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/lucas/springionic/SpringionicApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system.propeties" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/springionic.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,12 +42,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
