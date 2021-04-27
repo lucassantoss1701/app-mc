@@ -1,6 +1,8 @@
 package com.lucas.springionic.config;
 
 import com.lucas.springionic.services.DBService;
+import com.lucas.springionic.services.EmailService;
+import com.lucas.springionic.services.SmtpEmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -27,5 +29,10 @@ public class DevConfig {
         }
         dbService.instantiateTestDatabase();
         return true;
+    }
+
+    @Bean
+    public EmailService emailService(){
+        return new SmtpEmailService();
     }
 }
