@@ -5,6 +5,7 @@ import com.lucas.springionic.domain.enums.EstadoPagamento;
 import com.lucas.springionic.domain.enums.TipoCliente;
 import com.lucas.springionic.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
@@ -39,6 +40,9 @@ public class DBService {
 
     @Autowired
     private ItemPedidoRepository itemPedidoRepository;
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public void instantiateTestDatabase() throws ParseException {
         Categoria cat1 = new Categoria(null, "Informática");
@@ -97,7 +101,7 @@ public class DBService {
         estadoRepository.saveAll(Arrays.asList(est1, est2));
         cidadeRepository.saveAll(Arrays.asList(c1,c2,c3));
 
-        Cliente cli1 = new Cliente(null, "Italo Luan Santana de Souza", "lucas.pereira26022002@gmail.com", "50096910860", TipoCliente.PESSOAFISICA);
+        Cliente cli1 = new Cliente(null, "Italo Luan Santana de Souza", "lucas.pereira26022002@gmail.com", "50096910860", TipoCliente.PESSOAFISICA, bCryptPasswordEncoder.encode("2345998") );
 
         cli1.getTelefones().addAll(Arrays.asList("38273397","98574412"));
 

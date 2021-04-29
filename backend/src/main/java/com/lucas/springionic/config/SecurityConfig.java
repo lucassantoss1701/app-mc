@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -24,11 +25,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     Environment environment;
 
-    private static final String[] PUBLIC_MATCHER={
+    private static final String[] PUBLIC_MATCHER = {
             "/h2-console/**",
     };
 
-    private static final String[] PUBLIC_MATCHER_GET={
+    private static final String[] PUBLIC_MATCHER_GET = {
             "/produtos/**",
             "/categorias/**"
     };
@@ -60,5 +61,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration.applyPermitDefaultValues());
         return source;
+    }
+
+    @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }
